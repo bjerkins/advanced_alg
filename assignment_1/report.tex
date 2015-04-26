@@ -42,7 +42,7 @@
 
 \section*{Exercise 1}
 
-  Figure \ref{fig:e1_a_solution} shows a b-flow with maximum value of 9 for the first proposed graph from the assignment. The second proposed graph from the assignment has no b-flow. The reason is that $v_1$ wants to have at least $3 + c(v_2, v_1)$ after giving away $f(v_1, v_3)$. In order for that to happen the $f(v_2, v_1)$ has to equal to $c(v_2, v_1)$. After the $f(v_2, v_1)$, $v_2$ wants to end up with 1 in demand, meaning it needs a flow value of 4 to itself but that is impossible because the maximum flow to $v_2$ is equal to $c(v_3, v_2)$, or 2 and therefore is unable to fulfill $f(v_2, v_1) = c(v_2, v_1)$. 
+  Figure \ref{fig:e1_a_solution} shows a b-flow with maximum flow value of 9 for the first proposed graph from the assignment. The second proposed graph from the assignment has no b-flow. The reason is that $v_1$ wants to have at least $3 + c(v_2, v_1)$ after giving away $f(v_1, v_3)$. In order for that to happen the $f(v_2, v_1)$ has to equal to $c(v_2, v_1)$. After the $f(v_2, v_1)$, $v_2$ wants to end up with 1 in demand, meaning it needs a flow value of 4 to itself but that is impossible because the maximum flow to $v_2$ is equal to $c(v_3, v_2)$, or 2 and therefore is unable to fulfill $f(v_2, v_1) = c(v_2, v_1)$. 
 
   \begin{figure}[h]
     \centering
@@ -53,6 +53,36 @@
 
 \section*{Exercise 2}
 \subsection*{Exercise 2.1}
+
+  Tables \ref{table:values_xvf} and \ref{table:values_zfg} show the values for $x_{vf}$ and $z_{fg}$, respectively. The number of breakpoints are 13.
+  
+  \begin{table}[h]
+    \centering
+    \begin{tabular}{llllllll}
+                                    & \textbf{v1} & \textbf{v2} & \textbf{v3} & \textbf{v4} & \textbf{v5} & \textbf{v6} & \textbf{v7} \\ \cline{2-8} 
+    \multicolumn{1}{c|}{\textbf{a}} & 0           & 0           & 1           & 0           & 1           & 1           & 0           \\
+    \multicolumn{1}{l|}{\textbf{b}} & 1           & 0           & 0           & 0           & 0           & 1           & 0           \\
+    \multicolumn{1}{l|}{\textbf{c}} & 1           & 1           & 1           & 0           & 0           & 0           & 0           \\
+    \multicolumn{1}{l|}{\textbf{d}} & 0           & 1           & 1           & -1          & 0           & 1           & 0           \\
+    \multicolumn{1}{l|}{\textbf{e}} & 0           & 0           & 1           & 1           & -1          & 1           & 0          
+    \end{tabular}
+    \caption{The values for $x_{vf}$. For example, $v_1$ has inner turn in the boundary cycle $b$.}
+    \label{table:values_xvf}
+  \end{table}
+
+  \begin{table}[h]
+    \centering
+    \begin{tabular}{llllll}
+                                    & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d} & \textbf{e} \\ \cline{2-6} 
+    \multicolumn{1}{l|}{\textbf{a}} & 0          & 2          & 1          & 0          & 4          \\
+    \multicolumn{1}{l|}{\textbf{b}} & 0          & 0          & 1          & 1          & 0          \\
+    \multicolumn{1}{l|}{\textbf{c}} & 0          & 1          & 0          & 0          & 0          \\
+    \multicolumn{1}{l|}{\textbf{d}} & 0          & 1          & 0          & 0          & 0          \\
+    \multicolumn{1}{l|}{\textbf{e}} & 0          & 0          & 0          & 2          & 0         
+    \end{tabular}
+    \caption{The values for $z_{fg}$. For example, the number of inner turns between cycle $b$ and $c$ is 1.}
+    \label{table:values_zfg}
+  \end{table}
 
 \subsection*{Exercise 2.2}
 \begin{align*}

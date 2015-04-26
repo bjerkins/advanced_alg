@@ -54,7 +54,37 @@
 \section*{Exercise 2}
 \subsection*{Exercise 2.1}
 
-\subsection*{Exercise 2.1}
+  Tables \ref{table:values_xvf} and \ref{table:values_zfg} show the values for $x_{vf}$ and $z_{fg}$, respectively. The number of breakpoints are 13.
+  
+  \begin{table}[h]
+    \centering
+    \begin{tabular}{llllllll}
+                                    & \textbf{v1} & \textbf{v2} & \textbf{v3} & \textbf{v4} & \textbf{v5} & \textbf{v6} & \textbf{v7} \\ \cline{2-8} 
+    \multicolumn{1}{c|}{\textbf{a}} & 0           & 0           & 1           & 0           & 1           & 1           & 0           \\
+    \multicolumn{1}{l|}{\textbf{b}} & 1           & 0           & 0           & 0           & 0           & 1           & 0           \\
+    \multicolumn{1}{l|}{\textbf{c}} & 1           & 1           & 1           & 0           & 0           & 0           & 0           \\
+    \multicolumn{1}{l|}{\textbf{d}} & 0           & 1           & 1           & -1          & 0           & 1           & 0           \\
+    \multicolumn{1}{l|}{\textbf{e}} & 0           & 0           & 1           & 1           & -1          & 1           & 0          
+    \end{tabular}
+    \caption{The values for $x_{vf}$. For example, $v_1$ has inner turn in the boundary cycle $b$.}
+    \label{table:values_xvf}
+  \end{table}
+
+  \begin{table}[h]
+    \centering
+    \begin{tabular}{llllll}
+                                    & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d} & \textbf{e} \\ \cline{2-6} 
+    \multicolumn{1}{l|}{\textbf{a}} & 0          & 2          & 1          & 0          & 4          \\
+    \multicolumn{1}{l|}{\textbf{b}} & 0          & 0          & 1          & 1          & 0          \\
+    \multicolumn{1}{l|}{\textbf{c}} & 0          & 1          & 0          & 0          & 0          \\
+    \multicolumn{1}{l|}{\textbf{d}} & 0          & 1          & 0          & 0          & 0          \\
+    \multicolumn{1}{l|}{\textbf{e}} & 0          & 0          & 0          & 2          & 0         
+    \end{tabular}
+    \caption{The values for $z_{fg}$. For example, the number of inner turns between cycle $b$ and $c$ is 1.}
+    \label{table:values_zfg}
+  \end{table}
+
+\subsection*{Exercise 2.2}
 \begin{align*}
     \sum_{f \in F, v \in V}(X_{vf}) + \sum_{f \in F, g \in F}(Z_{fg}-Z_{gf}) = \begin{cases}
                                                                                      4, & \text{if internal}\\

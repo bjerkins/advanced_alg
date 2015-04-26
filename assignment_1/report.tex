@@ -87,10 +87,10 @@
 \subsection*{Exercise 2.2}
   
   \begin{align*}
-      \sum_{f \in F, v \in V}(X_{vf}) + \sum_{f \in F, g \in F}(Z_{fg}-Z_{gf}) = \begin{cases}
+      \sum_{f \in F, v \in V}(x_{vf}) + \sum_{f \in F}\sum_{g \in F \setminus f}(z_{fg} - z_{gf}) = \begin{cases}
                                                                                        4, & \text{if internal}\\
                                                                                       -4, & \text{if external}
-                                                                                 \end{cases}
+                                                                                   \end{cases}
   \end{align*}
 
 \subsection*{Exercise 2.3}
@@ -102,10 +102,10 @@
     & {\text{minimize}}
     & & \sum_{f \in F}\sum_{g \in F \setminus f} z_{fg} \\
     & \text{subject to}
-    & & \sum_{f \in F, v \in V}(X_{vf}) + \sum_{f \in F, g \in F}(Z_{fg}-Z_{gf}) =  \begin{cases}
+    & & \sum_{f \in F, v \in V}(x_{vf}) + \sum_{f \in F}\sum_{g \in F \setminus f}(z_{fg} - z_{gf}) = \begin{cases}
                                                                                       4, & \text{if internal}\\
                                                                                       -4, & \text{if external}
-                                                                                    \end{cases} \\
+                                                                                     \end{cases} \\
     & & & z_{fg} \geq 0
     \end{aligned}
   \end{equation*}

@@ -116,6 +116,11 @@ The restrictions on edges already mentioned also mean there are at most four dif
                                                                                       4, & \text{if internal}\\
                                                                                       -4, & \text{if external}
                                                                                      \end{cases} \\
+    & & &  \sum_{f \in F}{x_{vf}} = \begin{cases}
+                                        0 & \text{if v has degree 2}\\
+                                        2 & \text{if v has degree 3}\\
+                                        4 & \text{if v has degree 4}
+                                    \end{cases}\\
     & & & z_{fg} \geq 0
     \end{aligned}
   \end{equation*}

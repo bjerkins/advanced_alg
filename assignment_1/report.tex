@@ -42,7 +42,7 @@
 
 \section*{Exercise 1}
 
-  Figure \ref{fig:e1_a_solution} shows a b-flow with maximum flow value of 9 for the first proposed graph from the assignment. The second proposed graph from the assignment has no b-flow. The reason is that $v_1$ wants to have at least $3 + c(v_2, v_1)$ after giving away $f(v_1, v_3)$. In order for that to happen the $f(v_2, v_1)$ has to equal to $c(v_2, v_1)$. After the $f(v_2, v_1)$, $v_2$ wants to end up with 1 in demand, meaning it needs a flow value of 4 to itself but that is impossible because the maximum flow to $v_2$ is equal to $c(v_3, v_2)$, or 2 and therefore is unable to fulfill $f(v_2, v_1) = c(v_2, v_1)$. 
+  Figure \ref{fig:e1_a_solution} shows a b-flow with maximum flow value of 9 for the first proposed graph from the assignment. The second proposed graph has no b-flow. The reason is that $v_1$ wants to have at least $3 + c(v_2, v_1)$ after giving away $f(v_1, v_3)$. In order for that to happen the $f(v_2, v_1)$ has to equal to $c(v_2, v_1)$. After the $f(v_2, v_1)$, $v_2$ wants to end up with 1 in demand, meaning it needs a flow value of 4 to itself but that is impossible because the maximum flow to $v_2$ is equal to $c(v_3, v_2)$, or 2 and therefore is unable to fulfill $f(v_2, v_1) = c(v_2, v_1)$. 
 
   \begin{figure}[h]
     \centering
@@ -80,7 +80,7 @@
     \multicolumn{1}{l|}{\textbf{d}} & 0          & 1          & 0          & 0          & 0          \\
     \multicolumn{1}{l|}{\textbf{e}} & 0          & 0          & 0          & 2          & 0         
     \end{tabular}
-    \caption{The values for $z_{fg}$. For example, the number of inner turns between cycle $b$ and $c$ is 1.}
+    \caption{The values for $z_{fg}$. For example, the number of inner turns in the breakpoints of the edges that $d$ shares with $b$ is 2.}
     \label{table:values_zfg}
   \end{table}
 

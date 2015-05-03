@@ -4,7 +4,7 @@
 \usepackage{url}
 \usepackage{enumerate}
 \usepackage[top=3cm, bottom=3cm]{geometry}
-\usepackage{graphicx} 
+\usepackage{graphicx}
 \usepackage{enumitem}
 \usepackage{natbib}
 \usepackage{listings}
@@ -42,7 +42,7 @@
 
 \section*{Exercise 1}
 
-  Figure \ref{fig:e1_a_solution} shows a b-flow with maximum flow value of 9 for the first proposed graph from the assignment. The second proposed graph has no b-flow. The reason is that $v_1$ wants to have at least $3 + c(v_2, v_1)$ after giving away $f(v_1, v_3)$. In order for that to happen the $f(v_2, v_1)$ has to equal to $c(v_2, v_1)$. After the $f(v_2, v_1)$, $v_2$ wants to end up with 1 in demand, meaning it needs a flow value of 4 to itself but that is impossible because the maximum flow to $v_2$ is equal to $c(v_3, v_2)$, or 2 and therefore is unable to fulfill $f(v_2, v_1) = c(v_2, v_1)$. 
+  Figure \ref{fig:e1_a_solution} shows a b-flow with maximum flow value of 9 for the first proposed graph from the assignment. The second proposed graph has no b-flow. The reason is that $v_1$ wants to have at least $3 + c(v_2, v_1)$ after giving away $f(v_1, v_3)$. In order for that to happen the $f(v_2, v_1)$ has to equal to $c(v_2, v_1)$. After the $f(v_2, v_1)$, $v_2$ wants to end up with 1 in demand, meaning it needs a flow value of 4 to itself but that is impossible because the maximum flow to $v_2$ is equal to $c(v_3, v_2)$, or 2 and therefore is unable to fulfill $f(v_2, v_1) = c(v_2, v_1)$.
 
   \begin{figure}[h]
     \centering
@@ -55,16 +55,16 @@
 \subsection*{Exercise 2.1}
 
   Tables \ref{table:values_xvf} and \ref{table:values_zfg} show the values for $x_{vf}$ and $z_{fg}$, respectively. The number of breakpoints are 13.
-  
+
   \begin{table}[h]
     \centering
     \begin{tabular}{llllllll}
-                                    & \textbf{v1} & \textbf{v2} & \textbf{v3} & \textbf{v4} & \textbf{v5} & \textbf{v6} & \textbf{v7} \\ \cline{2-8} 
+                                    & \textbf{v1} & \textbf{v2} & \textbf{v3} & \textbf{v4} & \textbf{v5} & \textbf{v6} & \textbf{v7} \\ \cline{2-8}
     \multicolumn{1}{c|}{\textbf{a}} & 0           & 0           & 1           & 0           & 1           & 1           & 0           \\
     \multicolumn{1}{l|}{\textbf{b}} & 1           & 0           & 0           & 0           & 0           & 1           & 0           \\
     \multicolumn{1}{l|}{\textbf{c}} & 1           & 1           & 1           & 0           & 0           & 0           & 0           \\
     \multicolumn{1}{l|}{\textbf{d}} & 0           & 1           & 1           & -1          & 0           & 1           & 0           \\
-    \multicolumn{1}{l|}{\textbf{e}} & 0           & 0           & 1           & 1           & -1          & 1           & 0          
+    \multicolumn{1}{l|}{\textbf{e}} & 0           & 0           & 1           & 1           & -1          & 1           & 0
     \end{tabular}
     \caption{The values for $x_{vf}$. For example, $v_1$ has inner turn in the boundary cycle $b$.}
     \label{table:values_xvf}
@@ -73,19 +73,19 @@
   \begin{table}[h]
     \centering
     \begin{tabular}{llllll}
-                                    & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d} & \textbf{e} \\ \cline{2-6} 
+                                    & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d} & \textbf{e} \\ \cline{2-6}
     \multicolumn{1}{l|}{\textbf{a}} & 0          & 2          & 1          & 0          & 4          \\
     \multicolumn{1}{l|}{\textbf{b}} & 0          & 0          & 1          & 1          & 0          \\
     \multicolumn{1}{l|}{\textbf{c}} & 0          & 1          & 0          & 0          & 0          \\
     \multicolumn{1}{l|}{\textbf{d}} & 0          & 1          & 0          & 0          & 0          \\
-    \multicolumn{1}{l|}{\textbf{e}} & 0          & 0          & 0          & 2          & 0         
+    \multicolumn{1}{l|}{\textbf{e}} & 0          & 0          & 0          & 2          & 0
     \end{tabular}
     \caption{The values for $z_{fg}$. For example, the number of inner turns in the breakpoints of the edges that $d$ shares with $b$ is 2.}
     \label{table:values_zfg}
   \end{table}
 
 \subsection*{Exercise 2.2}
-  
+
   \begin{align*}
       \sum_{f \in F, v \in V}(x_{vf}) + \sum_{f \in F}\sum_{g \in F \setminus f}(z_{fg} - z_{gf}) = \begin{cases}
                                                                                        4, & \text{if internal}\\
@@ -96,7 +96,7 @@
 \subsection*{Exercise 2.3}
 It is a necessary but not sufficient condition for $G$ to be a rectilinear layout that no vertex has degree greater than 4. We see that this is the case by looking at the different ways in which we can connect edges to a vertex. Given the constraints that edges mustn't cross, and that they must be either vertical or horizontal, we find that there are only four ways to connect an edge to a vertex, namely the four cardinal directions.\\
 \\
-The restrictions on edges already mentioned also mean there are at most four different ways in which we can connect between two and four edges to a vertex, considering rotation of the vertex and edges not to have any meaning. These four ways to connect edges are shown on Figure \ref{fig:e1_a_solution}. 
+The restrictions on edges already mentioned also mean there are at most four different ways in which we can connect between two and four edges to a vertex, considering rotation of the vertex and edges not to have any meaning. These four ways to connect edges are shown on Figure \ref{fig:e1_a_solution}.
 
 \begin{figure}[h]
     \centering
@@ -106,7 +106,7 @@ The restrictions on edges already mentioned also mean there are at most four dif
 \end{figure}
 
 \subsection*{Exercise 2.4}
-  
+
   \begin{equation*}
     \begin{aligned}
     & {\text{minimize}}
@@ -126,6 +126,22 @@ The restrictions on edges already mentioned also mean there are at most four dif
   \end{equation*}
 
 \subsection*{Exercise 2.5}
+
+The vertices in the flow graph will be the faces and the original vertices of the planar embedding. There will be edges between adjacent faces and between vertices which lie on the boundary cycle of a face.
+
+Demands for faces are given by the formula
+\begin{align*}
+    demand(f) = \begin{cases} 4 & \text {if f is internal}\\ -4 &\text{otherwise}\end{cases}
+\end{align*}
+
+The demand for an original vertex $v$ is given by
+\begin{align*}
+    demand(e) = \begin{cases} 0 & \text{if v has degree 2}\\ -2 & \text{if v has degree 3} \\ -4 & \text{if v has degree 4 } \end{cases}
+\end{align*}
+
+The capacities between faces which share an edge in the flow graph are unbounded, with a cost of 1. The capacities are unbounded because there can be an unbounded number of breakpoints between faces.
+
+The capacity of edges starting in original vertices is 1 because it can provide at most 1 inner turn to a face.
 
 \end{document}
 % End of document.

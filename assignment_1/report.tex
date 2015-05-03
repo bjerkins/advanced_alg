@@ -110,7 +110,7 @@
                                                                                    \end{cases}
   \end{align*}
 
-  Finally, let's verify that the constraints hold for faces $a$ and $e$ from Figure 3 in the assignment description. We lookup the values in Table \ref{table:values_xvf} and \ref{table:values_zfg}:
+  Finally, let's verify that the constraints hold for faces $a$ and $e$ from Figure 3 in the assignment description. We look up the values in Table \ref{table:values_xvf} and \ref{table:values_zfg}:
   \begin{align*}
     a &: x_{v_{3}a} + x_{v_{5}a} + x_{v_{6}a} + ((z_{ab} - z_{ba}) + (z_{ac} - z_{ca}) + (z_{ae} - z_{ea}))\\
       &= 1 + 1 + 1 + ((0 - 2) + (0 - 1) + (0 - 4)) \\
@@ -136,7 +136,7 @@ The restrictions on edges already mentioned also mean there are at most four dif
 
 \subsection*{Exercise 2.4}
 
-  Based on the previously stated variables, we can now count the total number of breakpoints in the rectiliniar layout as the following:
+  Based on the previously stated variables, we can now count the total number of breakpoints in the rectilinear layout as the following:
   $$\sum_{f \in F}\sum_{g \in F \setminus f} z_{fg}$$
   where $z_{fg}$ is the number of inner turns in the breakpoints between $f$ and $g$. We need not worry about not counting any outer turns since those will be counted as inner turns when we look at $z_{gf}$.
 

@@ -263,10 +263,10 @@ We will first consider case 4. From the result in Section 3.1 we know how to tra
     \sum_{e\in \delta^-(v)}{x_e}-\sum_{e\in \delta^+(v)}{x_e} = b_v, \forall{v} \in V
 \end{align*}~\\
 \\
-Writing out the formula for the specific case of $v_1$ on Figure \ref{fig:e3_2_2} we get the following (note that the operational sign of $e_2$ changes on the right side of the equation because the direction of the edge is changed.)
+Writing out the formula for the specific case of $v_1$ in Figure \ref{fig:e3_2_b} we get the following (note that the operational sign of $e_2$ changes on the right side of the equation because the direction of the edge is changed.)
 \begin{align*}
-    \sum_{e\in \emptyset}{x_e} - \sum_{e\in \{e1, e2\}}{x_e} =
-    \sum_{e\in \{-e2\}}{x_e} - \sum_{e\in \{e_1\}}{x_e} = b
+    \sum_{e\in \emptyset}{x_e} - \sum_{e\in \{e_1, e_2\}}{x_e} =
+    \sum_{e\in \{-e_2\}}{x_e} - \sum_{e\in \{e_1\}}{x_e} = b
 \end{align*}~\\
 \\
 Figure \ref{fig:e3_2} shows the transformation we make in case 4 (where the transformation from Section 3.1 has already been applied.)
@@ -306,7 +306,7 @@ Combining what we showed in Sections 3.1, 3.2, and 3.3, we can now transform ins
 
 \subsection{3.4}
 Only the transformations in Sections 3.1 and 3.3 add edges and vertices to the graph.\\
-In Section 3.1 we saw that in the worse case we would add at most $2E$ edges and $E$ vertices. In Section 3.3 we saw that we would add at most $E$ edges and $E$ vertices.\\
+In Section 3.1 we saw that in the worst case we would add at most $2E$ edges and $E$ vertices. In Section 3.3 we saw that we would add at most $E$ edges and $E$ vertices.\\
 We see that the worst case for Section 3.1 and 3.3 can't happen at the same time; The transformations from Section 3.1 and 3.2 can always be applied in succession, which will leave $l_e = 0$ for all edges where these transformations were used. The transformation in Section 3.3 requires that $l_e \ne 0$, and thus can't be used after transformation 3.2. This means that we will at most add a constant number of edges and vertices, and will be within the bound of $O(V+E)$ edges and vertices.
 
 \end{document}

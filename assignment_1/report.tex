@@ -85,12 +85,33 @@
   \end{table}
 
 \subsection*{Exercise 2.2}
-
+  
+  The sum of all the turns that $f$ makes in its vertices is:
+  $$\sum_{f \in F, v \in V}{x_{vf}}$$
+  The sum of all the inner turns that $f$ makes in its breakpoints is:
+  $$\sum_{f \in F}\sum_{g \in F \setminus f}z_{fg}$$
+  If there exists an inner turn from $g$ to $f$, it must mean that that turn is an outer turn seen from $f$ to $g$ so we can therefore sum the outer turns up as following:
+  $$\sum_{f \in F}\sum_{g \in F \setminus f}z_{gf}$$
+  which can be combined to a single sum:
+  $$\sum_{f \in F}\sum_{g \in F \setminus f}(z_{fg} - z_{gf})$$
+  We then combine these equations and state them as the following constraints:
   \begin{align*}
       \sum_{f \in F, v \in V}(x_{vf}) + \sum_{f \in F}\sum_{g \in F \setminus f}(z_{fg} - z_{gf}) = \begin{cases}
-                                                                                       4, & \text{if internal}\\
-                                                                                      -4, & \text{if external}
+                                                                                       4, & \text{if } f \text{ is internal}\\
+                                                                                      -4, & \text{otherwise}
                                                                                    \end{cases}
+  \end{align*}
+
+  Finally, let's verify that the constraints hold for faces $a$ and $e$ from Figure 3 in the assignment description. We lookup the values in Table \ref{table:values_xvf} and \ref{table:values_zfg}:
+  \begin{align*}
+    a &: x_{v_{3}a} + x_{v_{5}a} + x_{v_{6}a} + ((z_{ab} - z_{ba}) + (z_{ac} - z_{ca}) + (z_{ae} - z_{ea}))\\
+      &= 1 + 1 + 1 + ((0 - 2) + (0 - 1) + (0 - 4)) \\
+      &= -4
+  \end{align*}
+  \begin{align*}
+    e &: x_{v_{3}e} + x_{v_{4}e} - x_{v_{5}e} + x_{v_{6}e} + ((z_{ea} - z_{ae}) + (z_{ed} - z_{de}))\\
+      &= 1 + 1 -1 + 1 + ((4 - 0) + (0 - 2)) \\
+      &= 4
   \end{align*}
 
 \subsection*{Exercise 2.3}

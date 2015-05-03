@@ -130,7 +130,7 @@ The restrictions on edges already mentioned also mean there are at most four dif
   
   Based on the previously stated variables, we can now count the total number of breakpoints in the rectliniar layout as the following:
   $$\sum_{f \in F}\sum_{g \in F \setminus f} z_{fg}$$
-  where $z_{fg}$ is the number of inner turns in the breakpoints between $f$ and $g$. We do not worry about not counting any outer turns since those will be counted as inner turns when we look at $z_{gf}$.
+  where $z_{fg}$ is the number of inner turns in the breakpoints between $f$ and $g$. We need not worry about not counting any outer turns since those will be counted as inner turns when we look at $z_{gf}$.
 
   Our objective function therefore becomes:
   \begin{equation*}
@@ -212,9 +212,9 @@ The demand for a vertex $v$ if $v$ represents an original vertex in the planar e
                 \end{cases}
 \end{align*}
 
-The capacities between faces which share an edge in the flow graph are unbounded with a cost of 1. The capacities are unbounded because the number of breakpoints between faces is unlimited. The capacity of edges starting in an original vertex is 1 because it can provide at most 1 inner turn to a face. The cost on these edges is none since there is a vertex lying on these kind of breakpoints.
+The capacities between faces which share an edge in the flow graph are unbounded with a cost of 1. The reason why they are unbounded is because we can have unlimited number of breakpoints between faces. The capacity of edges starting in an original vertex is 1 because it can provide at most 1 inner turn to a face. The cost on these edges is none since there is a vertex lying on these kind of breakpoints.
 
-Figure \ref{fig:mcfp_instance} shows an instance of a MCFP for the original planar embedding shown in figure \ref{fig:planar_embedding}. The red edges have cost 1 and the black edges have cost 0. The flow across a red edge represents the number of breakpoints between adjacent faces in the rectilinear layout. A flow across a black edge represents an vertex $v$ making an inner turn in a face $f$.
+Figure \ref{fig:mcfp_instance} shows an instance of a MCFP for the original planar embedding shown in figure \ref{fig:planar_embedding}. The edges painted in red have cost equal to 1 and the black edges have cost equal to 0. The flow across a red edge represents the number of breakpoints between adjacent faces in the rectilinear layout. A flow across a black edge represents an vertex $v$ making an inner turn in a face $f$.
 
 \begin{figure}[h]
   \centering

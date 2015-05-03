@@ -200,7 +200,7 @@ Figure \ref{fig:mcfp_instance} shows an instance of a MCFP for the original plan
 \begin{figure}[h]
   \centering
     \includegraphics[width=0.8\textwidth]{figures/e2_5}
-  \caption{An instance of MCFP corresponding to the embedded graph in Figure \ref{fig:planar_embedding}}.
+  \caption{An instance of MCFP corresponding to the embedded graph in Figure \ref{fig:planar_embedding}.}
   \label{fig:mcfp_instance}
 \end{figure}
 
@@ -212,57 +212,71 @@ We have identified four different cases which we need to consider for this task:
     \item $l_e$ is finite, $u_e$ is $\infty$
     \item $l_e$ is $-\infty$, $u_e$ is finite
     \item $l_e$ is $-\infty$ $u_e$ is $\infty$
-\end{enumerate}
-
+\end{enumerate}~\\
+\\
 The first three cases are trivial; it's clear that at least one of the variables is finite. The fourth case is interesting, though. We found that we can perform a transformation of the vertices such that at least one of the variables is finite. This is shown on Figure \ref{fig:e3_1}.
 
 \begin{figure}[h]
   \centering
     \includegraphics[width=0.6\textwidth]{figures/e3_1}
-  \caption{Transformation of case 4}.
+  \caption{Transformation of case 4, ensuring that at least one of $l_e$ and $u_e$ is finite.}
     \label{fig:e3_1}
-\end{figure}
-
-In the transformation we split the capacity over two edges instead of one, meaning that at least one of the variables is finite for each edge. It's clear that we maintain the same overall capacity between the edges, because the union of the two new ranges is equal to the original range.
-
-We see that our transformation adds one vertex and two edges per edge which has a capacity of $]-\infty;\infty[$. This means that in the worst case, we will add at most $2\cdot E$ edges and $E$ vertices, both of which are constant w.r.t. the original graph.
-
+\end{figure}~\\
+\\
+In the transformation we split the capacity over two edges instead of one, meaning that at least one of the variables is finite for each edge. It's clear that we maintain the same overall capacity between the edges, because the union of the two new ranges is equal to the original range.\\
+\\
+We see that our transformation adds one vertex and two edges per edge which has a capacity of $]-\infty;\infty[$. This means that in the worst case, we will add at most $2\cdot E$ edges and $E$ vertices, both of which are constant w.r.t. the original graph.\\
+\\
 We now know how to transform $I_0$ to $I_1$ where at least one of the variables $l_e$ and $u_e$ are finite on each edge.
 
 \subsection{3.2}
-Looking at the four cases listed in Section 3.1 we see that two of them are trivial, and that we need only focus our attention to the other two, namely cases 3 and 4.
-
+Looking at the four cases listed in Section 3.1 we see that two of them are trivial, and that we need only focus our attention to the other two, namely cases 3 and 4.\\
+\\
 We will first consider case 4. From the result in Section 3.1 we know how to transform case 4 to the figure shown on Figure \ref{fig:e3_1}. Once we've applied this transformation, we can begin looking at the meaning of having a negative capacity. Having a negative capacity over an edge $(v_1, v_2)$ is the same as having a positive capacity over the edge $(v_2, v_1)$. We can see this by lookig at the equation given in the assignment
 \begin{align*}
     \sum_{e\in \delta^-(v)}{x_e}-\sum_{e\in \delta^+(v)}{x_e} = b_v, \forall{v} \in V
-\end{align*}
-
-Writing out the formula for the specific case of $v_1$ on Figure \ref{fig:e3_2_2} we get the following (note that the operational sign of $e_2$ changes on the right side of the equation)
+\end{align*}~\\
+\\
+Writing out the formula for the specific case of $v_1$ on Figure \ref{fig:e3_2_2} we get the following (note that the operational sign of $e_2$ changes on the right side of the equation because the direction of the edge is changed.)
 \begin{align*}
     \sum_{e\in \emptyset}{x_e} - \sum_{e\in \{e1, e2\}}{x_e} =
     \sum_{e\in \{-e2\}}{x_e} - \sum_{e\in \{e_1\}}{x_e} = b
-\end{align*}
-
+\end{align*}~\\
+\\
 Figure \ref{fig:e3_2} shows the transformation we make in case 4 (where the transformation from Section 3.1 has already been applied.)
 
 \begin{figure}[h]
   \centering
     \includegraphics[width=0.6\textwidth]{figures/e3_2}
-  \caption{Transformation of case 4, ensuring that $l_e$ is finite}.
+  \caption{Transformation of case 4, ensuring that $l_e$ is finite}
   \label{fig:e3_2}
 \end{figure}
 
 \begin{figure}[h]
   \centering
     \includegraphics[width=0.4\textwidth]{figures/e3_2_b}
-  \caption{Vertex which has edges of both positive and negative capacity}.
+  \caption{Vertex which has edges of both positive and negative capacity}
   \label{fig:e3_2_b}
-\end{figure}
-
-We now consider case 3. From what we just showed above, it is clear that we can use the same approach; the edge $(v_1, v_2)$ with negative capacity is the same as having the edge $(v_2, v_1)$ with a positive capacity. Since $u_e$ is finite in this case, we know that $l_e$ will be so after the transformation.
+\end{figure}~\\
+\\
+We now consider case 3. From what we just showed above, it is clear that we can use the same approach; the edge $(v_1, v_2)$ with negative capacity is the same as having the edge $(v_2, v_1)$ with a positive capacity. Since $u_e$ is finite in this case, we know that $l_e$ will be so after the transformation.\\
+\\
+We now know how to transform $I_1$ to $I_2$ such that $l_e$ is finite.
 
 \subsection{3.3}
+From the previous sections we know how to transform the graph such that $l_e$ is finite. We now show how we can further transform it such that $l_e  = 0$.\\
+\\
+In this transformation we add a node $x$ on the edge $(u, v)$ as shown on Figure \ref{fig:e3_3}, where we know that $l_e$ is finite. The new vertex has a demand of $l_e$, ensuring that at least $l_e$ flows over the new edge added, even after the capacity of the edge $(u, x)$ has been set to 0.\\
+This transformation adds one edge and one vetex to the graph. This means that, in the worse case, we will add at most $E$ edges and $E$ vertices to the graph, both of which are constant w.r.t. the original graph.\\
+\\
+Combining what we showed in Sections 3.1, 3.2, and 3.3, we can now transform instances of GMCFP graphs to instances of MCFP graphs.
 
+\begin{figure}[h]
+  \centering
+    \includegraphics[width=0.4\textwidth]{figures/e3_3}
+  \caption{Transformation of finite $l_e$ ensuring that $l_e$ is equal to 0 while maintaining the required flow on the edges.}
+  \label{fig:e3_3}
+\end{figure}
 
 \subsection{3.4}
 

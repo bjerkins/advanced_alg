@@ -5,7 +5,7 @@
 \usepackage{enumerate}
 \usepackage[top=3cm, bottom=3cm]{geometry}
 \usepackage{graphicx}
-\usepackage{enumitem}
+% \usepackage{enumitem}
 \usepackage{natbib}
 \usepackage{listings}
 \usepackage{float}
@@ -113,8 +113,8 @@ The restrictions on edges already mentioned also mean there are at most four dif
     & & \sum_{f \in F}\sum_{g \in F \setminus f} z_{fg} \\
     & \text{subject to}
     & & \sum_{f \in F, v \in V}(x_{vf}) + \sum_{f \in F}\sum_{g \in F \setminus f}(z_{fg} - z_{gf}) = \begin{cases}
-                                                                                      4, & \text{if internal}\\
-                                                                                      -4, & \text{if external}
+                                                                                      4, & \text{if } f \text{ is internal}\\
+                                                                                      -4, & \text{otherwise}
                                                                                      \end{cases} \\
     & & &  \sum_{f \in F}{x_{vf}} = \begin{cases}
                                         0 & \text{if v has degree 2}\\
@@ -127,23 +127,68 @@ The restrictions on edges already mentioned also mean there are at most four dif
 
 \subsection*{Exercise 2.5}
 
-The vertices in the flow graph will be the faces and the original vertices of the planar embedding. There will be edges in the flow graph between faces which are adjacent in the planar embedding, and edges between vertices in the flow graph, which lie on the boundary cycle of a face in the planar embedding.
+We have:
 
-Demands for faces in the flow graph are given by the formula
 \begin{align*}
-    demand(f) = \begin{cases} 4 & \text {if f is internal}\\ -4 &\text{otherwise}\end{cases}
+      \sum_{f \in F, v \in V}(x_{vf}) + \sum_{f \in F}\sum_{g \in F \setminus f}(z_{fg} - z_{gf}) = \begin{cases}
+                                                                                       4, & \text{if } f \text{ is internal}\\
+                                                                                      -4, & \text{otherwise}
+                                                                                   \end{cases}
+\end{align*}
+Making the following substitution for $x_{vf}$ :
+\begin{align*}
+  x_{vf} =  \begin{cases}
+               1, & \text{if } f \text{ makes an inner turn in } v \\
+               0, & \text{otherwise.}
+            \end{cases}
+\end{align*}
+we can write:
+
+\begin{align*}
+  \sum_{f \in F, v \in V}{x_{vf}^{-}} + \sum_{f \in F, v \in V}{x_{vf}^{+}} + \sum_{f \in F}\sum_{g \in F \setminus f}(z_{fg} - z_{gf}) = \begin{cases}
+                                                                                       4, & \text{if } f \text{ is internal}\\
+                                                                                      -4, & \text{otherwise}
+                                                                                   \end{cases}
+\end{align*}
+where $x_{vf}^{-}$ represents an inner turn and $x_{vf}^{+}$ represents an outer turn. 
+
+We then rewrite: (TODO fix alignment problem)
+\begin{align*}
+  &= \sum_{f \in F, v \in V}{x_{vf}^{-}} + \sum_{f \in F, v \in V}{x_{vf}^{+}} + \sum_{f \in F}\sum_{g \in F \setminus f}(z_{fg} - z_{gf})\\
+  &= \sum_{f \in F, v \in V}{x_{vf}^{-}} + \sum_{f \in F, v \in V}{x_{vf}^{+}} + \sum_{f \in F, g \in F\setminus f}{z_{fg}} - \sum_{f \in F, g \in F \setminus f}z_{gf}\\
+  &= \sum_{f \in F, v \in V}{x_{vf}^{-}} + \sum_{f \in F, g \in F\setminus f}{z_{fg}} - \sum_{f \in F, v \in V}{x_{vf}^{+}} + \sum_{f \in F, g \in F \setminus f}z_{gf}\\
 \end{align*}
 
-The demand for an original vertex $v$ in the flow graph is given by
+Since $x_{vf}^{-}$ represents an inner turn of $f$ in $v$ and $z_{fg}$ represents the number of inner turns that $f$ makes in the breakpoints between $f$ and $g$, the summation of $x_{vf}^{-}$ and $z_{fg} $is the total number of inner turns in $f$ which we will call something else.... ?
+
+The vertices in the MCFP graph will consist of the faces \textit{and} the original vertices of the planar embedding. The edges in the flow graph will be between:
+
+\begin{enumerate}[(i)]
+  \item faces which are adjacent in the planar embedding
+  \item vertices in the planar embedding which lie on a boundary cycle of a face
+\end{enumerate}
+
+The demand for a vertex $v$ if the vertex represents a face in the planar embedding is given by the formula:
+
 \begin{align*}
-    demand(e) = \begin{cases} 0 & \text{if v has degree 2}\\ -2 & \text{if v has degree 3} \\ -4 & \text{if v has degree 4 } \end{cases}
+    demand(v) = \begin{cases} 
+                  4  & \text{if } v \text{ represents a internal face}\\ 
+                  -4 & \text{if } v \text{ represents a external face}
+                \end{cases}
 \end{align*}
 
-The capacities between faces which share an edge in the flow graph are unbounded, with a cost of 1. The capacities are unbounded because there can be an unbounded number of breakpoints between faces.\\
-\\
-The capacity of edges starting in original vertices is 1 because it can provide at most 1 inner turn to a face.\\
-\\
-The red edges in Figure \ref{fig:mcfp_instance} have cost 1, and the black edges have cost 0. Flow across a red edges represents the number of breakpoints between adjacent faces in the rectilinear layout. Flow across a black edge represents that the vertex makes an inner turn in the face.\\
+The demand for a vertex $v$ if $v$ represents an original vertex in the planar embedding is given by the formula:
+\begin{align*}
+    demand(v) = \begin{cases} 
+                  0  & \text{if } v \text{ has degree 2} \\ 
+                  -2 & \text{if } v \text{ has degree 3} \\ 
+                  -4 & \text{if } v \text{ has degree 4} 
+                \end{cases}
+\end{align*}
+
+The capacities between faces which share an edge in the flow graph are unbounded with a cost of 1. The capacities are unbounded because the number of breakpoints between faces is unlimited. The capacity of edges starting in an original vertex is 1 because it can provide at most 1 inner turn to a face. The cost on these edges is none since there is a vertex lying on these kind of breakpoints.
+
+Figure \ref{fig:mcfp_instance} shows an instance of a MCFP for the original planar embedding shown in figure \ref{fig:planar_embedding}. The red edges have cost 1 and the black edges have cost 0. The flow across a red edge represents the number of breakpoints between adjacent faces in the rectilinear layout. A flow across a black edge represents an vertex $v$ making an inner turn in a face $f$.
 
 \begin{figure}[h]
   \centering

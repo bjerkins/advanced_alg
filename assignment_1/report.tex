@@ -47,7 +47,7 @@
   \begin{figure}[h]
     \centering
       \includegraphics[width=0.6\textwidth]{figures/e1_a_solution}
-    \caption{Graph showing b-flow with maximum flow = 9}
+    \caption{Graph showing b-flow with flow value 9}
     \label{fig:e1_a_solution}
   \end{figure}
 
@@ -127,21 +127,23 @@ The restrictions on edges already mentioned also mean there are at most four dif
 
 \subsection*{Exercise 2.5}
 
-The vertices in the flow graph will be the faces and the original vertices of the planar embedding. There will be edges between adjacent faces and between vertices which lie on the boundary cycle of a face.
+The vertices in the flow graph will be the faces and the original vertices of the planar embedding. There will be edges in the flow graph between faces which are adjacent in the planar embedding, and edges between vertices in the flow graph, which lie on the boundary cycle of a face in the planar embedding.
 
-Demands for faces are given by the formula
+Demands for faces in the flow graph are given by the formula
 \begin{align*}
     demand(f) = \begin{cases} 4 & \text {if f is internal}\\ -4 &\text{otherwise}\end{cases}
 \end{align*}
 
-The demand for an original vertex $v$ is given by
+The demand for an original vertex $v$ in the flow graph is given by
 \begin{align*}
     demand(e) = \begin{cases} 0 & \text{if v has degree 2}\\ -2 & \text{if v has degree 3} \\ -4 & \text{if v has degree 4 } \end{cases}
 \end{align*}
 
-The capacities between faces which share an edge in the flow graph are unbounded, with a cost of 1. The capacities are unbounded because there can be an unbounded number of breakpoints between faces.
-
-The capacity of edges starting in original vertices is 1 because it can provide at most 1 inner turn to a face.
+The capacities between faces which share an edge in the flow graph are unbounded, with a cost of 1. The capacities are unbounded because there can be an unbounded number of breakpoints between faces.\\
+\\
+The capacity of edges starting in original vertices is 1 because it can provide at most 1 inner turn to a face.\\
+\\
+The red edges in Figure \ref{fig:mcfp_instance} have cost 1, and the black edges have cost 0. Flow across a red edges represents the number of breakpoints between adjacent faces in the rectilinear layout. Flow across a black edge represents that the vertex makes an inner turn in the face.\\
 
 \begin{figure}[h]
   \centering
@@ -157,12 +159,12 @@ The capacity of edges starting in original vertices is 1 because it can provide 
   \label{fig:mcfp_instance}
 \end{figure}
 
+\section{3}
+\subsection{3.1}
+\subsection{3.2}
+\subsection{3.3}
+\subsection{3.4}
+
 \end{document}
 % End of document.
-
-
-
-
-
-
 

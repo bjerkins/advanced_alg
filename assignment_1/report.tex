@@ -186,7 +186,7 @@ we can write:
 \end{align*}
 where $x_{vf}^{-}$ represents an inner turn and $x_{vf}^{+}$ represents an outer turn.
 
-We then rewrite: (TODO fix alignment problem)
+We then rewrite:
 \begin{align*}
   &= \sum_{f \in F, v \in V}{x_{vf}^{-}} - \sum_{f \in F, v \in V}{x_{vf}^{+}} + \sum_{f \in F}\sum_{g \in F \setminus f}(z_{fg} - z_{gf})\\
   &= \sum_{f \in F, v \in V}{x_{vf}^{-}} - \sum_{f \in F, v \in V}{x_{vf}^{+}} + \sum_{f \in F, g \in F\setminus f}{z_{fg}} - \sum_{f \in F, g \in F \setminus f}z_{gf}\\
@@ -194,12 +194,10 @@ We then rewrite: (TODO fix alignment problem)
 \end{align*}~\\
 The first two terms of the last equation above represent inner turns, while the two latter terms represent outer turns. We rename these pairs of terms to $y_e$ where $e$ is an edge
 \begin{align*}
-  &= \sum_{e \in \delta^{-}(v)}{y_e} - \sum_{e \in \delta^{+}(v)}{y_e} = b_v, \forall v \in V
+  \sum_{e \in \delta^{-}(v)}{y_e} - \sum_{e \in \delta^{+}(v)}{y_e} = \begin{cases}4 &\text{if f is internal}\\ -4 & \text{otherwise}\end{cases}, \forall v \in V
 \end{align*}
 
 where $\delta^{-}(v)$ represents the set of inner turns in the original vertices and breakpoints and $v$ is a vertix in the flow-graph, and $\delta^{+}(v)$ represents the same, but for outer turns.
-
-Since $x_{vf}^{-}$ represents an inner turn of $f$ in $v$ and $z_{fg}$ represents the number of inner turns that $f$ makes in the breakpoints between $f$ and $g$, the summation of $x_{vf}^{-}$ and $z_{fg} $is the total number of inner turns in $f$ which we will call something else.... ?
 
 The vertices in the MCFP graph will consist of the faces \textit{and} the original vertices of the planar embedding. The edges in the flow graph will be between:
 

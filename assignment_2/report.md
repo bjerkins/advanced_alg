@@ -1,10 +1,10 @@
 % Advanced Algorithms and Data Structures
 % Assignment 2
-% Bjarki Madsen (lch929) - Michael Bang (xxx?)
+% Bjarki Madsen (lch929) - Michael Bang (tqg432)
 
 \pagebreak
 
-# Exercise 1 (a) 
+# Exercise 1 (a)
 
 If $p \geq 100/m$ for some very large $m$, we want to show that:
 
@@ -14,7 +14,7 @@ Looking at the probability part, we observe the following:
 
 $$ Pr[h_{m}(x) / m < p] = Pr[h_{m}(x) < mp ]$$
 
-\begin{align*} 
+\begin{align*}
     \frac{\lceil mp \rceil}{p} &\geq \frac{mp}{p} \\
                                &\geq p
 \end{align*}
@@ -39,4 +39,11 @@ $$ \frac{|C|}{|A|} = \frac{E[|C \cap S^k_h(A)|]}{k} $$
 
 
 
+# Exercise 4 (a)
+
+It's immediately clear that the set of the $k$ lowest elements of the set $A \cup B$ must be contained in the union of the $k$ lowest elements from each of the sets, $S^k_h(A \cup B) \in S^k_h(A) \cup S^k_h(B)$.
+
+Taking the lowest $k$ elements from the set $S^k_h(A) \cup S^k_h(B)$ of $2k$ elements must yield the $k$ minimum elements of the set $A \cup B$, meaning that $S^k_h(A \cup B) = S^k_h(S^k_h(A) \cup S^k_h(B))$.
+
+# Exercise 4 (b)
 

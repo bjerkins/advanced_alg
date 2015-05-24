@@ -21,6 +21,22 @@ $$ Pr[h_{m}(x) / m < p] = Pr[h_{m}(x) < mp ]$$
 
 # Exercise 1 (b)
 
+Given the _low collision probablity_\ref{TODO}, we have:
+
+$$ Pr[h(x) = h(y)] \leq \frac{1}{100|A|^2} $$
+
+given that $m \geq 100|A|^2$.
+
+# Exercise 2
+
+Since $S$ is uniformly distributed in A, $\frac{|S^k_h(A)|}{|A|}$ is the expected fraction of elements from $S$ to be found in any subset of $A$. In addition, since $C$ is a subset of $A$, we expect the same ratio, $\frac{k}{n}$, elements of $C$ to also be in $S$. We therefore write:
+
+$$ \frac{k}{n} = \frac{|S^k_h(A)|}{|A|} = E[\frac{|C \cap S^k_h(A)|}{|C|}] \Rightarrow \frac{k}{|A|} = \frac{E[|C \cap S^k_h(A)|]}{|C|}$$
+
+since $|S^k_h(A)| = k$ and $|C|$ is a constant which can be taken out of the expectation. We then multiply $\frac{|C|}{k}$ on both sides which gives:
+
+$$ \frac{|C|}{|A|} = \frac{E[|C \cap S^k_h(A)|]}{k} $$
+
 
 
 

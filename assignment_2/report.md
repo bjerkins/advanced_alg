@@ -37,6 +37,13 @@ since $|S^k_h(A)| = k$ and $|C|$ is a constant which can be taken out of the exp
 
 $$ \frac{|C|}{|A|} = \frac{E[|C \cap S^k_h(A)|]}{k} $$
 
+# Exercise 3 (a)
+
+Fibonacci min-heap
+
+# Exercise 3 (b)
+
+$O(1)$
 
 
 

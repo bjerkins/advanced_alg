@@ -52,7 +52,12 @@ It's immediately clear that the set of the $k$ lowest elements of the set $A \cu
 
 Taking the lowest $k$ elements from the set $S^k_h(A) \cup S^k_h(B)$ of $2k$ elements must yield the $k$ minimum elements of the set $A \cup B$, meaning that $S^k_h(A \cup B) = S^k_h(S^k_h(A) \cup S^k_h(B))$.
 
+
 # Exercise 4 (b)
+
+# Exercise 4 (c)
+
+Because the sets are sorted, and each are of size $k$, we can find their intersection in time linear to $k$ by iteratively progressing through the sorted lists, picking the items which are equal. We can perform the calculation in $O(k)$.
 
 # Exercise 5
 
@@ -71,4 +76,3 @@ $$ $$
 ![Visualization of the probabilities for Lemma 1\label{fig:e_6_7_line}](figures/e_6_7_line.png)
 
 # Exercise 7
-

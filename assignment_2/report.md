@@ -65,13 +65,32 @@ Because the sets are sorted, and each are of size $k$, we can find their interse
 
 We want to proof that the probabilty of $|S_{h,p}(A)| < k$ has an upper bound of $1 / r^2$ by using Lemma 1. As Figure \ref{fig:e_6_7_line} shows, it would be sufficiant to show that $k < \mu - r\sqrt{\mu}$ since: 
 
-$$ Pr[|X - \mu| \geq r\sqrt{\mu}] \leq 1/r^2 $$
+\begin{align*}
+    Pr[|X - \mu| \geq r\sqrt{\mu}] \leq 1/r^2       &\Rightarrow \\
+    Pr[X - \mu \geq r\sqrt{\mu}] + Pr[\mu - X \geq r\sqrt{\mu}] \leq 1/r^2 &\Rightarrow \\
+    Pr[X \geq \mu + r\sqrt{\mu}] + Pr[X \leq \mu - r\sqrt{\mu}] \leq 1/r^2 
+\end{align*}
 
-Having shown that, it's clear that $P_{(I)}$ is also less than $1 / r^2$.
+Having shown that, it's clear that $P_{(I)}$ is also less than $1 / r^2$. 
 
-We have:
+We have that
 
-$$ $$
+$$ \mu > k $$
+
+and imply:
+
+\begin{align*}
+    \mu > k                                          &\Rightarrow \\
+    \frac{\mu}{k} > 1                                &\Rightarrow \\
+    \frac{\sqrt{\mu}}{\sqrt{k}} > 1                  &\Rightarrow \\
+    \frac{\sqrt{\mu}r}{\sqrt{k}} > r                 &\Rightarrow \\
+    \frac{\mu r}{\sqrt{\mu}\sqrt{k}} > r             &\Rightarrow \\
+    \frac{\mu r}{\sqrt{k}} > r\sqrt{\mu}             &\Rightarrow \\
+    \mu - \frac{\mu r}{\sqrt{k}} < \mu - r\sqrt{\mu} &\Rightarrow \\
+    k < \mu - r\sqrt{\mu}
+\end{align*}
+
+$P_{(I)}$ is therefore proofed.
 
 ![Visualization of the probabilities for Lemma 1\label{fig:e_6_7_line}](figures/e_6_7_line.png)
 

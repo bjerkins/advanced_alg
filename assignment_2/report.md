@@ -21,7 +21,7 @@ $$ Pr[h_{m}(x) / m < p] = Pr[h_{m}(x) < mp ]$$
 
 # Exercise 1 (b)
 
-Given the _low collision probablity_\ref{TODO}, we have:
+Given the _low collision probablity_, we have:
 
 $$ Pr[h(x) = h(y)] \leq \frac{1}{100|A|^2} $$
 
@@ -52,8 +52,9 @@ It's immediately clear that the set of the $k$ lowest elements of the set $A \cu
 
 Taking the lowest $k$ elements from the set $S^k_h(A) \cup S^k_h(B)$ of $2k$ elements must yield the $k$ minimum elements of the set $A \cup B$, meaning that $S^k_h(A \cup B) = S^k_h(S^k_h(A) \cup S^k_h(B))$.
 
-
 # Exercise 4 (b)
+
+
 
 # Exercise 4 (c)
 

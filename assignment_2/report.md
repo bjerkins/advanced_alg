@@ -54,3 +54,21 @@ Taking the lowest $k$ elements from the set $S^k_h(A) \cup S^k_h(B)$ of $2k$ ele
 
 # Exercise 4 (b)
 
+# Exercise 5
+
+# Exercise 6
+
+We want to proof that the probabilty of $|S_{h,p}(A)| < k$ has an upper bound of $1 / r^2$ by using Lemma 1. As Figure \ref{fig:e_6_7_line} shows, it would be sufficiant to show that $k < \mu - r\sqrt{\mu}$ since: 
+
+$$ Pr[|X - \mu| \geq r\sqrt{\mu}] \leq 1/r^2 $$
+
+Having shown that, it's clear that $P_{(I)}$ is also less than $1 / r^2$.
+
+We have:
+
+$$ $$
+
+![Visualization of the probabilities for Lemma 1\label{fig:e_6_7_line}](figures/e_6_7_line.png)
+
+# Exercise 7
+

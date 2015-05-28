@@ -53,7 +53,7 @@ Taking the lowest $k$ elements from the set $S^k_h(A) \cup S^k_h(B)$ of $2k$ ele
 
 # Exercise 4 (b)
 
-
+![The intersections of bottom-_K_ samples\label{fig:e_4}](figures/e_4.png)
 
 # Exercise 4 (c)
 

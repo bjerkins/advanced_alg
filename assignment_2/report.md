@@ -118,7 +118,7 @@ We want to prove that the probability of $|S_{h,p}(A)| < k$ has an upper bound o
 
 Having shown that, it's clear that $P_{(I)}$ is also less than $1 / r^2$.
 
-We have that
+We have that:
 
 $$ \mu > k $$
 

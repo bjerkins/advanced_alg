@@ -78,8 +78,8 @@ We will use contradiction to prove that $(I) \lor (II) \implies (4)$.
 First we assume $\lnot (II)$:
 
 \begin{align*}
-    |S_{h,p}(C)| \le (1+b)p|C| &\implies\\
-    |S_{h,p}(C)| \le (1+b)\frac{k}{n(1-a)}|C| &\implies\\
+    |S_{h,p}(C)| \le (1+b)p|C| &\implies \\
+    |S_{h,p}(C)| \le (1+b)\frac{k}{n(1-a)}|C| &\implies \\
     |S_{h,p}(C)| \le \frac{1+b}{1-a}kf
 \end{align*}
 
@@ -87,9 +87,9 @@ Then we assume that $(4)$ is true:
 
 \begin{align*}
     \frac{1+b}{1-a}kf < |C \cap S|\\
-    \text{using } \lnot (II) &\implies\\
+    \text{using } \lnot (II) &\implies \\
     |S_{h,p}(C)| < |C \cap S|\\
-    \text{we know that } |C \cap S| \le k &\implies\\
+    \text{we know that } |C \cap S| \le k &\implies \\
     |S_{h,p}(C)| < |C \cap S| \le k
 \end{align*}
 
@@ -120,7 +120,7 @@ First we manipulate Lemma 1 in order to make it more useful for us:
 
 From this it's clear that $Pr[X \leq \mu - r\sqrt{\mu}] \leq 1/r^2$.
 
-Figure \ref{fig:e_6_7_line} shows us the same thing geometrically. It also shows us that if we can show that $k < \mu - r\sqrt{\mu}$ then it must hold that that $Pr[X < k] \le Pr[X < \mu - r\sqrt{\mu}] \le 1/r^2$, which is what we want to prove.
+Figure \ref{fig:e_6_7_line} shows us the same thing geometrically. It also shows us that if we can show that $k < \mu - r\sqrt{\mu}$ then it must hold that $Pr[X < k] \le Pr[X < \mu - r\sqrt{\mu}] \le 1/r^2$, which is what we want to prove.
 
 We now show that $k < \mu - r\sqrt{mu}$ in order to complete our proof of $P_{(I)}$:
 
@@ -140,4 +140,25 @@ We now show that $k < \mu - r\sqrt{mu}$ in order to complete our proof of $P_{(I
 
 # Exercise 7
 
-Because of time constraints we unfortunately couldn't do this exercise. Had we had the time, though, we would've done something similar to Exercise 6, showing that $\mu + r\sqrt{\mu} < \mu_c(1+b)$, using the same geometrical argument to show that it must be the case that $X_C > (1+b)\mu_C$
+In this exercise we'll use some of the results from Exercise 6. Especially we will use the manipulated form of Lemma 1, where we see that $Pr[X \geq \mu + r\sqrt{\mu}] \le 1/r^2$.
+
+Figure \ref{fig:e_6_7_line} shows us that if we can show that $\mu+r\sqrt{\mu} < \mu_C + r\sqrt{\mu}$ then it must hold that $Pr[X > \mu_C(1+b)] \le Pr[X \ge \mu + r\sqrt{\mu}] \le 1/r^2$, which is what we want to prove.
+
+In the following we show exactly that, thus finishing our proof of $P_{(II)}$.
+
+\begin{align*}
+    1-a \le 1 &\implies \\
+    k(1-a) \le k &\implies \\
+    k \le \frac{k}{1-a} &\implies \\
+    k \le \frac{nk}{n(1-a)} &\implies \\
+    k \le pn &\implies \\
+    fk \le pfn &\implies \\
+    fk \le \mu_c &\implies \\
+    \frac{r^2}{r^2}fk \le \mu_C &\implies\\
+    r^2 \le \frac{r^2}{fk}\mu_C &\implies\\
+    r \le \frac{r}{\sqrt{fk}}\sqrt{\mu_C}  &\implies \\
+    r \le b\sqrt{\mu_C}  &\implies \\
+    r\sqrt{\mu_C} \le b\mu_C &\implies \\
+    r\sqrt{\mu_C} + \mu_C \le \mu_C + b\mu_C &\implies \\
+    r\sqrt{\mu_C} + \mu_C \le (1+b)\mu_C &\implies \\
+\end{align*}

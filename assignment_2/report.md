@@ -29,7 +29,7 @@ As well as the right side:
     \frac{\lfloor mp \rfloor+1}{m} \le \frac{mp+1}{m} = p + \frac{1}{m} \le 1.01p
 \end{align*}
 
-In the equation above we used the fact that $m$ is large, meaning that $1/m$ is very small.
+Since $m$ is large.
 
 
 # Exercise 1 (b)
@@ -43,7 +43,7 @@ We know that $m \ge 100|A|^2$, so $Pr[h(x)=h(y)] \le \frac{1}{100|A|^2}$
 
 Since $S$ is uniformly distributed in A, $\frac{|S^k_h(A)|}{|A|}$ is the expected fraction of elements from $S$ to be found in any subset of $A$. In addition, since $C$ is a subset of $A$, we expect the same ratio, $\frac{k}{n}$, elements of $C$ to also be in $S$. We therefore write:
 
-$$ \frac{k}{n} = \frac{|S^k_h(A)|}{|A|} = E[\frac{|C \cap S^k_h(A)|}{|C|}] \Rightarrow \frac{k}{|A|} = \frac{E[|C \cap S^k_h(A)|]}{|C|}$$
+$$ \frac{k}{n} = \frac{|S^k_h(A)|}{|A|} = E[\frac{|C \cap S^k_h(A)|}{|C|}] \implies \frac{k}{|A|} = \frac{E[|C \cap S^k_h(A)|]}{|C|}$$
 
 since $|S^k_h(A)| = k$ and $|C|$ is a constant which can be taken out of the expectation. We then multiply $\frac{|C|}{k}$ on both sides which gives:
 
@@ -51,11 +51,11 @@ $$ \frac{|C|}{|A|} = \frac{E[|C \cap S^k_h(A)|]}{k} $$
 
 # Exercise 3 (a)
 
-We would use a Fibonacci min-heap as the datastructure since we have a constant time to insert an element and $O(n \log n)$ to extract the minimum. 
+We would use a Fibonacci min-heap as the data structure since we have a constant time to insert an element and $O(\log n)$ to extract the minimum, yielding a total time of $O(k\log n)$ to extract the $k$ lowest elements.
 
 # Exercise 3 (b)
 
-Inserting a key to the heap would takes $O(1)$ time.
+Inserting a key to the heap takes $O(1)$ time.
 
 # Exercise 4 (a)
 
@@ -111,12 +111,12 @@ The above implies that either $(I)$ or $(II)$ must be true in order for $(4)$ to
 We want to prove that the probability of $|S_{h,p}(A)| < k$ has an upper bound of $1 / r^2$ by using Lemma 1. As Figure \ref{fig:e_6_7_line} shows, it would be sufficient to show that $k < \mu - r\sqrt{\mu}$ since:
 
 \begin{align*}
-    Pr[|X - \mu| \geq r\sqrt{\mu}] \leq 1/r^2       &\Rightarrow \\
-    Pr[X - \mu \geq r\sqrt{\mu}] + Pr[\mu - X \geq r\sqrt{\mu}] \leq 1/r^2 &\Rightarrow \\
-    Pr[X \geq \mu + r\sqrt{\mu}] + Pr[X \leq \mu - r\sqrt{\mu}] \leq 1/r^2 
+    Pr[|X - \mu| \geq r\sqrt{\mu}] \leq 1/r^2       &\implies \\
+    Pr[X - \mu \geq r\sqrt{\mu}] + Pr[\mu - X \geq r\sqrt{\mu}] \leq 1/r^2 &\implies \\
+    Pr[X \geq \mu + r\sqrt{\mu}] + Pr[X \leq \mu - r\sqrt{\mu}] \leq 1/r^2
 \end{align*}
 
-Having shown that, it's clear that $P_{(I)}$ is also less than $1 / r^2$. 
+Having shown that, it's clear that $P_{(I)}$ is also less than $1 / r^2$.
 
 We have that
 
@@ -125,18 +125,20 @@ $$ \mu > k $$
 and imply:
 
 \begin{align*}
-    \mu > k                                          &\Rightarrow \\
-    \frac{\mu}{k} > 1                                &\Rightarrow \\
-    \frac{\sqrt{\mu}}{\sqrt{k}} > 1                  &\Rightarrow \\
-    \frac{\sqrt{\mu}r}{\sqrt{k}} > r                 &\Rightarrow \\
-    \frac{\mu r}{\sqrt{\mu}\sqrt{k}} > r             &\Rightarrow \\
-    \frac{\mu r}{\sqrt{k}} > r\sqrt{\mu}             &\Rightarrow \\
-    \mu - \frac{\mu r}{\sqrt{k}} < \mu - r\sqrt{\mu} &\Rightarrow \\
+    \mu > k                                          &\implies \\
+    \frac{\mu}{k} > 1                                &\implies \\
+    \frac{\sqrt{\mu}}{\sqrt{k}} > 1                  &\implies \\
+    \frac{\sqrt{\mu}r}{\sqrt{k}} > r                 &\implies \\
+    \frac{\mu r}{\sqrt{\mu}\sqrt{k}} > r             &\implies \\
+    \frac{\mu r}{\sqrt{k}} > r\sqrt{\mu}             &\implies \\
+    \mu - \frac{\mu r}{\sqrt{k}} < \mu - r\sqrt{\mu} &\implies \\
     k < \mu - r\sqrt{\mu}
 \end{align*}
 
-$P_{(I)}$ is therefore proofed.
+$P_{(I)}$ is therefore proven.
 
 ![Visualization of the probabilities for Lemma 1\label{fig:e_6_7_line}](figures/e_6_7_line.png)
 
 # Exercise 7
+
+Because of time constraints we unfortunately couldn't do this exercise. Had we had the time, though, we would've done something similar to Exercise 6, showing that $\mu + r\sqrt{\mu} < \mu_c(1+b)$, using the same geometrical argument to show that it must be the case that $X_C > (1+b)\mu_C$

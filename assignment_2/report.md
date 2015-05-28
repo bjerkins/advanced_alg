@@ -97,9 +97,9 @@ Now we assume $\lnot(I)$:
 \begin{align*}
     k le |S_{h,p}(A)|\\
     \text{let } C = A, \text{ and use } (4)\\
-    |S_{h,p}(C)| < k \le |S_{h,p}(A)\\
+    |S_{h,p}(C)| < k \le |S_{h,p}(A)|\\
     \text{but } C = A\text{, so}\\
-    |S_{h,p}(A)| < |S_{h,p}(A)
+    |S_{h,p}(A)| < |S_{h,p}(A)|
 \end{align*}
 
 Which obviously is a contradiction.

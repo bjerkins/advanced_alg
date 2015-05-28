@@ -108,7 +108,9 @@ The above implies that either $(I)$ or $(II)$ must be true in order for $(4)$ to
 
 # Exercise 6
 
-We want to prove that the probability of $|S_{h,p}(A)| < k$ has an upper bound of $1 / r^2$ by using Lemma 1. As Figure \ref{fig:e_6_7_line} shows, it would be sufficient to show that $k < \mu - r\sqrt{\mu}$ since:
+We want to prove that the probability of $|S_{h,p}(A)| < k$ has an upper bound of $1 / r^2$ by using Lemma 1.
+
+First we manipulate Lemma 1 in order to make it more useful for us:
 
 \begin{align*}
     Pr[|X - \mu| \geq r\sqrt{\mu}] \leq 1/r^2       &\implies \\
@@ -116,13 +118,11 @@ We want to prove that the probability of $|S_{h,p}(A)| < k$ has an upper bound o
     Pr[X \geq \mu + r\sqrt{\mu}] + Pr[X \leq \mu - r\sqrt{\mu}] \leq 1/r^2
 \end{align*}
 
-Having shown that, it's clear that $P_{(I)}$ is also less than $1 / r^2$.
+From this it's clear that $Pr[X \leq \mu - r\sqrt{\mu}] \leq 1/r^2$.
 
-We have that:
+Figure \ref{fig:e_6_7_line} shows us the same thing geometrically. It also shows us that if we can show that $k < \mu - r\sqrt{\mu}$ then it must hold that that $Pr[X < k] \le Pr[X < \mu - r\sqrt{\mu}] \le 1/r^2$, which is what we want to prove.
 
-$$ \mu > k $$
-
-and imply:
+We now show that $k < \mu - r\sqrt{mu}$ in order to complete our proof of $P_{(I)}$:
 
 \begin{align*}
     \mu > k                                          &\implies \\
@@ -135,7 +135,6 @@ and imply:
     k < \mu - r\sqrt{\mu}
 \end{align*}
 
-$P_{(I)}$ is therefore proven.
 
 ![Visualization of the probabilities for Lemma 1\label{fig:e_6_7_line}](figures/e_6_7_line.png)
 

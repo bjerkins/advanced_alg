@@ -39,12 +39,11 @@ $$ \frac{|C|}{|A|} = \frac{E[|C \cap S^k_h(A)|]}{k} $$
 
 # Exercise 3 (a)
 
-Fibonacci min-heap
+We would use a Fibonacci min-heap as the datastructure since we have a constant time to insert an element and $O(n \log n)$ to extract the minimum. 
 
 # Exercise 3 (b)
 
-$O(1)$
-
+Inserting a key to the heap would takes $O(1)$ time.
 
 # Exercise 4 (a)
 
